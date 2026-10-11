@@ -17,7 +17,8 @@ int main() {
     char ch;
     set_keypress_mode(1);
     srand(time(0));
-    while (1) {(rand() % 100) + 1;
+    while (1) {
+        num1 = (rand() % 100) + 1;
         num2 = (rand() % 100) + 1;
         operator = (rand() % 4);
         switch (operator) {

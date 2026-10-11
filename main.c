@@ -113,18 +113,15 @@ int choice() {
         char arrowType = getchar(); 
         switch (arrowType) {
             case 'D':
-                printf("⬅️ Decision: LEFT button pressed! Moving left...\n");
                 return 1;
                 break;
 
             case 'C':
-                printf("➡️ Decision: RIGHT button pressed! Moving right...\n");
                 return 2;
                 break;
             case 'q':
                 return 0;
             default:
-                printf("ℹ️ You pressed a different arrow key.\n");
                 break;
         }
     }

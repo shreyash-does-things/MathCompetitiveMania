@@ -12,7 +12,7 @@ int choice();
 void set_keypress_mode(int enable);
 
 int main() {
-    int operator;
+    int operator=0;
     int num1,num2,score=0;
     char ch;
     set_keypress_mode(1);
@@ -20,7 +20,6 @@ int main() {
     while (1) {
         num1 = (rand() % 100) + 1;
         num2 = (rand() % 100) + 1;
-        operator = (rand() % 4);
         switch (operator) {
             case 0:
                 printf("+ %i || + %i\n",num1,num2);
@@ -50,6 +49,7 @@ int main() {
                 printf("/ %i || / %i\n",num1,num2);
                 score=divide(num1,num2,score);
         }
+        operator = (rand() % 4);
         printf("\nscore : %i \n",score);
     }
     return 0;

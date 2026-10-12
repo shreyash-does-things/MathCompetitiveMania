@@ -13,11 +13,13 @@ void set_keypress_mode(int enable);
 
 int main() {
     int operator=0;
-    int num1,num2,score=0;
+    int num1,num2,n,score=0;
     char ch;
+    printf("enter how log do you want to play : ");
+    scanf("%i",&n);
     set_keypress_mode(1);
     srand(time(0));
-    while (1) {
+    while (n!=0) {
         num1 = (rand() % 100) + 1;
         num2 = (rand() % 100) + 1;
         switch (operator) {
@@ -30,27 +32,20 @@ int main() {
                 score=minus(num1,num2,score);
                 break;
             case 2:
-                if (num1 > 10) {
-                    num1 /= 10;
-                }
-                if (num2 > 10) {
-                    num2 /= 10;
-                }
+                num1 = (rand() % 10) + 1;
+                num2 = (rand() % 10) + 1;
                 printf("* %i || * %i\n",num1,num2);
                 score=multiply(num1,num2,score);
                 break;
             case 3:
-                if (num1 > 10) {
-                    num1 /= 10;
-                }
-                if (num2 > 10) {
-                    num2 /= 10;
-                }
+                num1 = (rand() % 10) + 2;
+                num2 = (rand() % 10) + 2;
                 printf("/ %i || / %i\n",num1,num2);
                 score=divide(num1,num2,score);
         }
         operator = (rand() % 4);
         printf("\nscore : %i \n",score);
+        n--;
     }
     return 0;
 }
